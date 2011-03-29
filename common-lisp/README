@@ -1,0 +1,9 @@
+Usage
+
+    > sbcl
+    * (load "ebeats.lisp")
+    * (ebeats:beat)
+
+d29.03.2011@629.beat
+
+
