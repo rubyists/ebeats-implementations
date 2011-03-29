@@ -1,0 +1,7 @@
+require "rubygems"
+require "pindah"
+
+Pindah.spec = {
+  :name => "ebeats_widget",
+  :target_version => "1.6"
+}

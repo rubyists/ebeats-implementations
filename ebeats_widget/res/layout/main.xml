@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:orientation="vertical"
+  android:background="@drawable/round_background"
+  android:layout_width="wrap_content"
+  android:layout_height="wrap_content"
+  android:paddingTop="2dip"
+  android:paddingLeft="2dip"
+  android:paddingRight="2dip"
+  android:paddingBottom="2dip"
+  android:gravity="center_vertical">
+  <TextView
+    android:singleLine="true" 
+    android:paddingTop="2dip"
+    android:paddingLeft="2dip"
+    android:paddingRight="2dip"
+    android:paddingBottom="2dip"
+    android:layout_width="wrap_content" 
+    android:layout_height="wrap_content" 
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:background="@drawable/round_background"
+    android:textColor="#f000"
+    android:textSize="20sp"
+    android:typeface="monospace"
+    android:id="@+id/beats" 
+    android:text="ebeats" />
+</LinearLayout>

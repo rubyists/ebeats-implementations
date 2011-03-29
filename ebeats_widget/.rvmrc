@@ -1,0 +1,3 @@
+rvm_gemset_create_on_use_flag=1
+rvm use --create jruby-1.6.0@ebeats_widget
+[[ -s .gems ]] && rvm gemset import .gems
