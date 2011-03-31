@@ -66,6 +66,51 @@ function draw_clock(dt)
       ctx.fill();
     ctx.restore();
 
+    ctx.save();
+      // Date String
+      ctx.translate(0, -(line_w * 2));
+      ctx.font = (line_w * 1.6).toString() + "px sans-serif";
+      ctx.fillStyle = "rgba(200,200,200,1)";
+      ctx.textAlign = "center";
+      ctx.fillText(date_str(dt), 0, 0);
+
+      // ebeats.org
+      ctx.translate(0, line_w);
+      ctx.font = (line_w * 0.8).toString() + "px sans-serif";
+      ctx.fillText("ebeats.org", 0, 0);
+    ctx.restore();
+
+    ctx.save();
+      ctx.rotate(hand_rotation);
+
+      // Clock Hand
+      ctx.fillStyle = "rgba(71,107,120,1)";
+      ctx.beginPath();
+      ctx.lineTo(0, ((line_w / 2) + 1));
+      ctx.lineTo((w / 2) - (line_w + 4), ((line_w / 2) + 1));
+      ctx.lineTo((w / 2) - (line_w + 4), -((line_w / 2) + 1));
+      ctx.lineTo(0, -((line_w / 2) + 1));
+      ctx.closePath();
+      ctx.fill();
+
+      // Beats
+      ctx.fillStyle = "rgba(144,208,232,1)";
+      ctx.font = (line_w * 1.2).toString() + "px sans-serif";
+      ctx.fillText(_beats_str, line_w * 3.5, line_w * 0.4, (w / 2) - line_w);
+    ctx.restore();
+
+    // Gloss
+    ctx.save();
+      var gloss = ctx.createLinearGradient(0, -(w / 2), 0, 0);
+      gloss.addColorStop(0, "rgba(255,255,255,0.3)");
+      gloss.addColorStop(1, "rgba(255,255,255,0)");
+      ctx.fillStyle = gloss;
+      ctx.beginPath();
+      ctx.arc(0, 0, (w / 2) - (line_w * 1.25), 15 * Math.PI / 180, -195 * Math.PI / 180, true);
+      ctx.closePath();
+      ctx.fill();
+    ctx.restore();
+
     // Face Border
     ctx.save();
       ctx.strokeStyle = "rgba(71,107,120,1)";
@@ -138,51 +183,6 @@ function draw_clock(dt)
         ctx.translate(0, -(h / 2) + (line_w - 1));
         ctx.fillText("875", 0, 0);
       ctx.restore();
-    ctx.restore();
-
-    ctx.save();
-      ctx.rotate(hand_rotation);
-
-      // Clock Hand
-      ctx.fillStyle = "rgba(71,107,120,1)";
-      ctx.beginPath();
-      ctx.lineTo(0, ((line_w / 2) + 1));
-      ctx.lineTo((w / 2) - (line_w + 4), ((line_w / 2) + 1));
-      ctx.lineTo((w / 2) - (line_w + 4), -((line_w / 2) + 1));
-      ctx.lineTo(0, -((line_w / 2) + 1));
-      ctx.closePath();
-      ctx.fill();
-
-      // Beats
-      ctx.fillStyle = "rgba(144,208,232,1)";
-      ctx.font = (line_w * 1.2).toString() + "px sans-serif";
-      ctx.fillText(_beats_str, line_w * 3.5, line_w * 0.4, (w / 2) - line_w);
-    ctx.restore();
-
-    ctx.save();
-      // Date String
-      ctx.translate(0, -(line_w * 2));
-      ctx.font = (line_w * 1.6).toString() + "px sans-serif";
-      ctx.fillStyle = "rgba(200,200,200,1)";
-      ctx.textAlign = "center";
-      ctx.fillText(date_str(dt), 0, 0);
-
-      // ebeats.org
-      ctx.translate(0, line_w);
-      ctx.font = (line_w * 0.8).toString() + "px sans-serif";
-      ctx.fillText("ebeats.org", 0, 0);
-    ctx.restore();
-
-    // Gloss
-    ctx.save();
-      var gloss = ctx.createLinearGradient(0, -(w / 2), 0, 0);
-      gloss.addColorStop(0, "rgba(255,255,255,0.3)");
-      gloss.addColorStop(1, "rgba(255,255,255,0)");
-      ctx.fillStyle = gloss;
-      ctx.beginPath();
-      ctx.arc(0, 0, (w / 2) - line_w, 15 * Math.PI / 180, -195 * Math.PI / 180, true);
-      ctx.closePath();
-      ctx.fill();
     ctx.restore();
 
   ctx.restore();
