@@ -4,10 +4,14 @@ DECLARE
   hours decimal;
   minutes decimal;
   seconds decimal;
+  bpday decimal := 1000;
+  bphour decimal := 24;
+  bpmin decimal := bphour * 60;
+  bpsec decimal := bpmin * 60;
 BEGIN
   SELECT EXTRACT(hour FROM curtime) INTO hours;
   SELECT EXTRACT(minute FROM curtime) INTO minutes;
   SELECT EXTRACT(second FROM curtime) INTO seconds;
-  RETURN ((((1000.0/24.0) * hours)) + (((1000.0/(24.0*60.0)) * minutes)) + (((1000.0/(24.0*60.0*60.0)) * seconds)))::text;
+  RETURN '@' || FLOOR((bpday/bphour * hours) + (bpday/bpmin * minutes) + (bpday/bpsec * seconds))::text;
 END;
 $$ LANGUAGE plpgsql;
