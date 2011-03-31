@@ -3,7 +3,7 @@
 from datetime import datetime
 
 def ebeats():
-    t = datetime.now()
+    t = datetime.utcnow()
     perHour = 1000.0 / 24.0
     perMinute = 1000.0 / (24.0 * 60.0)
     perSecond = 1000.0 / (24.0 * 60.0 * 60.0)
