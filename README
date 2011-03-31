@@ -1,3 +1,6 @@
 See ebeats.org for the philosophy behind ebeats.  Here will store as many implementations
 as we can develop or find submissions for.  Bonus karma awarded to all contributors, blessings
 will flow upon you in accordance with the quality of your contribution.
+
+The spec for ebeats is fairly simple but allows comparisons of key date/time handling aspects of
+the different implementations and languages.
