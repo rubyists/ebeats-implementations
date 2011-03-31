@@ -1,0 +1,8 @@
+== USAGE ==
+psql -f ebeats.plsql
+ % echo 'select ebeats()'|psql
+  ebeats 
+  --------
+   @33
+   (1 row)
+
