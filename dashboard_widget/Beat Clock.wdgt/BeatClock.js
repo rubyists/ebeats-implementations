@@ -208,5 +208,5 @@ function onhide()
 
 if(window.widget) {
   widget.onshow = onshow;
-  widget.onshow = onhide;
+  widget.onhide = onhide;
 }
