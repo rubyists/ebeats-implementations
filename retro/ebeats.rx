@@ -1,0 +1,13 @@
+( Retro 11 implementation of ebeats.         )
+( Compile by uncommenting the last 2 lines,  )
+( then run:  retro --shrink --with ebeats.rx )
+
+: beats ( x-y  ) 1157 * 1000 / ;
+: now   (  -s  ) time 86400 mod ;
+: x     ( x-yz ) 10 /mod ;
+: .     ( x-   ) putn ; 
+: .beats ( x-  ) beats '@ putc 100 /mod 2x 2. . '. putc  x 2. ;
+
+( [ now .beats bye ] is boot )
+( save bye                   )
+
