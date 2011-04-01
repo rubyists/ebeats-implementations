@@ -1,8 +1,5 @@
 #!/usr/bin/env gst
 
 time := DateTime now asUTC.
-beats := ((time hour)   * (1000 / 24)) +
-         ((time minute) * (1000 / (24 * 60))) +
-         ((time second) * (1000 / (24 * 60 * 60))).
-
-('@', (((((beats * 10) asInteger) / 10) asFloat)) asString) displayNl
+beats := ((time hour * 3600) + (time minute * 60) + (time second)) / 0.864.
+('@', (beats asInteger / 100) asFloat asString) displayNl.
