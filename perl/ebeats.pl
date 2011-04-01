@@ -1,3 +1,2 @@
 #!/usr/bin/env perl
-($sec,$min,$hour,$mday,$mon,$year,$wday,$yday,$isdst) = gmtime(time);
-print ((1000/24 * $hour) + (1000/24/60 * $min) + (1000/24/60/60 * $sec));
+@g=gmtime(time);printf "@%.2f\n",((@g[2]*1000/24)+(@g[1]*1000/1440)+(@g[0]*1000/86400));
