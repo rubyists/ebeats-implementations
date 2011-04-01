@@ -1,0 +1,5 @@
+$ mysql db_name < ebeats.sql
+$ echo "select ebeats()" | mysql db_name
+ebeats()
+53.52
+$
