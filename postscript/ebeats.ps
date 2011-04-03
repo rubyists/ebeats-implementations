@@ -1,0 +1,33 @@
+% PostScript implementation of ebeats.
+%
+% Since the %Calendar% device doesn't appear to contain any timezone info,
+% resort to this;
+% TZ=UTC gs -q -sDEVICE=bmpmono ebeats.ps
+
+/seconds {
+(%Calendar%) /IODevice resourcestatus {
+	pop pop (%Calendar%) currentdevparams
+	dup /Running get {
+		dup /Hour   get 3600 mul exch 
+		dup /Minute get 60   mul exch 
+		    /Second get add add            
+	} {
+		(Clock/calendar is present but not running.\n) print
+		quit
+	} ifelse
+} {
+	(No clock/calendar present.\n) print
+	quit
+} ifelse
+} def
+
+/ebeats {
+	(@) print
+	0.01157407 mul 20 string cvs 0 6 getinterval print
+	(\n) print
+} def
+
+seconds ebeats
+
+quit
+
