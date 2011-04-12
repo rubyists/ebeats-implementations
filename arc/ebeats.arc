@@ -1,0 +1,6 @@
+(def ebeats ()
+    (= td (timedate))
+    (= eb (+ (* (pop td) (/ 1000. 86400))
+          (* (pop td) (/ 1000. 1440))
+          (* (pop td) (/ 1000. 24))))
+    (string "@" (nearest eb 0.01)))
