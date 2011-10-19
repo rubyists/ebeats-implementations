@@ -1,5 +1,5 @@
 include time
-import rock/sdk/os/Time
+import os/Time
 
 // struct tm *gmtime_r(const time_t *timep, struct tm *result);
 gmtime_r: extern func(TimeT*, TMStruct*) -> TMStruct*
